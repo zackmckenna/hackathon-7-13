@@ -37,9 +37,6 @@ export const Failure = ({ error }) => {
 }
 
 export const Success = ({ wiki }) => {
-  console.log(JSON.stringify(wiki))
-  console.log(wiki)
-  console.log(wiki.description)
   return (
     <>
       <div
