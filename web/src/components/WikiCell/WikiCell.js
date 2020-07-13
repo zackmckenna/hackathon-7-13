@@ -43,7 +43,7 @@ export const Success = ({ wiki }) => {
   return (
     <>
       <div
-        className="column is-size-2 is-bold is-half
+        className="column is-size-2 has-text-weight-bold is-half
 is-offset-one-quarter"
       >
         {wiki.titles}
@@ -59,6 +59,19 @@ is-offset-one-quarter"
 is-offset-one-quarter"
       >
         {wiki.extract}
+      </div>
+      <div
+        className="column is-half
+is-offset-one-quarter"
+      >
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href={wiki.desktopUrl}
+          className="button is-info"
+        >
+          View on Wikipedia
+        </a>
       </div>
     </>
   )

@@ -17,11 +17,15 @@ const HomePage = () => {
 
   const handleSubmitSearchParam = () => {
     setSearchParam(searchParamInput)
+    setSearchParamInput('')
   }
 
   return (
     <>
-      <NavLayout>
+      <NavLayout
+        handleSubmitSearchParam={handleSubmitSearchParam}
+        handleSearchParamInputChange={handleSearchParamInputChange}
+      >
         <section className="hero is-bold is-fullwidth is-fullheight is-primary">
           <div className="hero-body">
             <div className="container">
@@ -48,8 +52,28 @@ is-offset-one-quarter"
                   </div>
                 </div>
               )}
-              <div className="column">
+
+              <div className="column m-b-3">
                 {searchParam && <WikiCell searchParam={searchParam} />}
+              </div>
+              <div className="column">
+                {searchParam && (
+                  <div className="column is-half is-offset-one-quarter">
+                    <div className="navbar-item">
+                      <input
+                        placeholder="search again"
+                        onChange={(e) => handleSearchParamInputChange(e)}
+                        className="input m-r-1 has-addons"
+                      ></input>
+                      <a
+                        onClick={() => handleSubmitSearchParam()}
+                        className="button is-info"
+                      >
+                        <strong>Search</strong>
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

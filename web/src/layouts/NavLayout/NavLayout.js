@@ -1,9 +1,13 @@
-const NavLayout = ({ children }) => {
+const NavLayout = ({
+  children,
+  handleSearchParamInputChange,
+  handleSubmitSearchParam,
+}) => {
   return (
     <>
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
+          <a className="navbar-item">
             <p className="has-text-weight-bold has-text-primary">prettypedia</p>
           </a>
 
@@ -22,32 +26,31 @@ const NavLayout = ({ children }) => {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a className="navbar-item">Home</a>
-
-            <a className="navbar-item">Documentation</a>
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">More</a>
-
-              <div className="navbar-dropdown">
-                <a className="navbar-item">About</a>
-                <a className="navbar-item">Jobs</a>
-                <a className="navbar-item">Contact</a>
-                <hr className="navbar-divider"></hr>
-                <a className="navbar-item">Report an issue</a>
-              </div>
-            </div>
+            <a
+              href="https://www.mintbean.io/mb-event/c45466cb-05d2-4472-8cb5-e78cdc5f5aff"
+              className="navbar-item"
+            >
+              Mintbean Hackathon 7-13
+            </a>
+            <a href="https://zackmckenna.com" className="navbar-item">
+              made by zackmckenna
+            </a>
           </div>
 
-          <div className="navbar-end">
+          {/* <div className="navbar-end">
             <div className="navbar-item">
-              <div className="buttons">
-                <a className="button is-primary">
-                  <strong>Search</strong>
-                </a>
-              </div>
+              <input
+                onChange={(e) => handleSearchParamInputChange(e)}
+                className="input m-r-1 has-addons"
+              ></input>
+              <a
+                onClick={() => handleSubmitSearchParam()}
+                className="button is-info"
+              >
+                <strong>Search</strong>
+              </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </nav>
       {children}
