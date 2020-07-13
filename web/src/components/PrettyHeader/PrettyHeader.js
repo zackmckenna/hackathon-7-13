@@ -1,7 +1,7 @@
 const PrettyHeader = () => {
   return (
     <div>
-      <section className="hero is-bold is-primary">
+      <section className="hero is-bold is-fullheight is-primary">
         <div className="hero-body">
           <div className="container">
             <h1 className="title is-size-1 has-text-centered">prettypedia</h1>

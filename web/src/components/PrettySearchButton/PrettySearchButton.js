@@ -3,7 +3,7 @@ const PrettySearchButton = ({ handleSubmitSearchParam }) => {
     <div>
       <button
         onClick={() => handleSubmitSearchParam()}
-        className="button is-primary is-large"
+        className="button is-info is-medium"
       >
         Search Wikipedia
       </button>

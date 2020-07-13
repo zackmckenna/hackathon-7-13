@@ -12,12 +12,54 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => {
+  return (
+    <div
+      className="column is-half
+    is-offset-one-quarter"
+    >
+      ...loading
+    </div>
+  )
+}
 
 export const Empty = () => <div>Empty</div>
 
-export const Failure = ({ error }) => <div>Error: {error.message}</div>
+export const Failure = ({ error }) => {
+  return (
+    <div
+      className="column is-half
+    is-offset-one-quarter"
+    >
+      no wikipedia entry found for that entry
+    </div>
+  )
+}
 
 export const Success = ({ wiki }) => {
-  return JSON.stringify(wiki)
+  console.log(JSON.stringify(wiki))
+  console.log(wiki)
+  console.log(wiki.description)
+  return (
+    <>
+      <div
+        className="column is-size-2 is-bold is-half
+is-offset-one-quarter"
+      >
+        {wiki.titles}
+      </div>
+      <div
+        className="column is-half
+is-offset-one-quarter"
+      >
+        {wiki.description}
+      </div>
+      <div
+        className="column is-half
+is-offset-one-quarter"
+      >
+        {wiki.extract}
+      </div>
+    </>
+  )
 }
