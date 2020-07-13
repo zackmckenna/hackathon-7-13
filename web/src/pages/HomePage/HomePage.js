@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { Link } from '@redwoodjs/router'
 import WikiCell from 'src/components/WikiCell'
+import PrettySearchButton from 'src/components/PrettySearchButton'
 
+import PrettyHeader from 'src/components/PrettyHeader/PrettyHeader'
+import PrettyInput from 'src/components/PrettyInput/PrettyInput'
 const HomePage = () => {
   const [searchParam, setSearchParam] = useState(null)
   const [searchParamInput, setSearchParamInput] = useState('')
@@ -17,24 +20,20 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>HomePage</h1>
-      <p>Find me in "./web/src/pages/HomePage/HomePage.js"</p>
-      <input
-        onChange={(e) => {
-          handleSearchParamInputChange(e)
-        }}
-      ></input>
-      <button
-        onClick={() => handleSubmitSearchParam()}
-        className="button is-primary"
-      >
-        Hello
-      </button>
-      {searchParam && <WikiCell searchParam={searchParam} />}
-      <p>
-        My default route is named "home", link to me with `
-        <Link to="home">routes.home()</Link>`
-      </p>
+      <div className="container">
+        <PrettyHeader />
+        <div className="column has-text-centered is-centered">
+          <PrettyInput
+            handleSearchParamInputChange={handleSearchParamInputChange}
+          />
+        </div>
+        <div className="column has-text-centered">
+          <PrettySearchButton
+            handleSubmitSearchParam={handleSubmitSearchParam}
+          />
+        </div>
+        {searchParam && <WikiCell searchParam={searchParam} />}
+      </div>
     </>
   )
 }
