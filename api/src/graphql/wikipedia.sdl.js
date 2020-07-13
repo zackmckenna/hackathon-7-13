@@ -1,6 +1,6 @@
 export const schema = gql`
   type Wiki {
-    searchString: String!
+    searchParam: String!
     titles: String!
     extract: String!
     mobileUrl: String
@@ -10,6 +10,6 @@ export const schema = gql`
   }
 
   type Query {
-    getWiki(searchString: String!): Wiki!
+    getWiki(searchParam: String!): Wiki!
   }
 `
