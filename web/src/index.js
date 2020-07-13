@@ -3,7 +3,7 @@ import { RedwoodProvider, FatalErrorBoundary } from '@redwoodjs/web'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 
 import Routes from 'src/Routes'
-
+import './bulma-theme.scss'
 import './index.css'
 
 ReactDOM.render(
